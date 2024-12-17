@@ -6,10 +6,12 @@ This project is designed for beginners and intermediate learners who want to exp
 
 ## 2. Technologies Used
 
-- **Prisma**: Next-generation Node.js ORM for database interaction.
-- **PostgreSQL**: A powerful, open-source relational database.
-- **Node.js**: JavaScript runtime to connect Prisma with PostgreSQL.
-- **JavaScript**: Programming language for performing CRUD operations.
+- **Prisma**: Next-generation Node.js ORM for database interaction
+  - [Prisma Official Documentation](https://www.prisma.io/docs)
+- **PostgreSQL**: A powerful, open-source relational database
+  - [PostgreSQL Official Documentation](https://www.postgresql.org/docs/)
+- **Node.js**: JavaScript runtime to connect Prisma with PostgreSQL
+- **JavaScript**: Programming language for performing CRUD operations
 
 ## 3. Database Relationships
 
@@ -67,7 +69,22 @@ A many-to-many relationship means that records in one table can relate to multip
 
 You can perform CRUD operations using Prisma Client.
 
-## 5. Conclusion
+## 5. Documentation Resources
+
+- **Prisma Documentation**: [https://www.prisma.io/docs](https://www.prisma.io/docs)
+  - Comprehensive guide to Prisma ORM
+  - Installation instructions
+  - Schema definition
+  - Client usage
+  - Migration strategies
+
+- **PostgreSQL Documentation**: [https://www.postgresql.org/docs/](https://www.postgresql.org/docs/)
+  - Detailed database documentation
+  - Installation guides
+  - SQL reference
+  - Advanced database concepts
+
+## 6. Conclusion
 
 This project provides a comprehensive understanding of how to use Prisma and PostgreSQL to define database relationships, perform CRUD operations, and connect everything using JavaScript. By exploring One-to-One, One-to-Many, and Many-to-Many relationships, you will gain practical knowledge to build database-driven applications.
 
