@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// one to one relationship
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  profile   Profile? @relation // (one to one) No need to specify onDelete here 
+  posts Post[] //(one to many)
+}
+
+model Profile {
+  id        Int    @id @default(autoincrement())
+  bio       String
+  userId    Int    @unique
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade) // Cascade on delete in Profile model
+}
+
+//One to many
+model Post {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String
+  userId  Int
+  user    User   @relation(fields: [userId], references: [id])
+}
+// Many to many
+model Student {
+  id       Int       @id @default(autoincrement())
+  name     String
+  courses  Course[]
+}
+
+model Course {
+  id       Int       @id @default(autoincrement())
+  title    String    
+  students Student[]
+}
+
